@@ -68,7 +68,7 @@ ZonedDateTime acceptedTime = ZonedDateTime.now(ZoneId.of("UTC"));
 | The times on a bus schedule | `LocalTime` | The bus schedule remains the same regardless of the date and time zone. |
 | When the emergency call arrives at the central office | `Instant` | Precise global timestamp is required to avoid time zone issues. |
 | When Easter takes place in the year 2022 | `LocalDate` | Easter is a date-based event without a specific time component. |
-| How long a ticket with a 1-day validity lasts | `Duration` | The ticket's validity is measured in a duration rather than a fixed time. |
+| How long a ticket with a 1-day validity lasts | `Duration` or `LocalDateTime` | The ticket's validity is measured in a duration (e.g., 24 hours), but you need a start date/time (LocalDateTime) to calculate the expiration. Alternatively, you can directly store the end date/time. |
 | The date next to a signature (contract management software) | `LocalDate` | Only the date is needed, without time or zone details. |
 | When New Year's Eve is (on January 1st at 00:00, regardless of location) | `LocalTime` or `LocalDateTime` | Time is fixed at 00:00 without consideration of time zones. |
 | When the video call is | `ZonedDateTime` | The time of a video call varies depending on the participant's time zone. |
